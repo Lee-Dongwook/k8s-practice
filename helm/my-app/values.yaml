@@ -1,9 +1,9 @@
 replicaCount: 2
 
 image:
-  repository: k8s-app
-  pullPolicy: Never
-  tag: "v2"
+  repository: ghcr.io/lee-dongwook/k8s-practice
+  pullPolicy: Always
+  tag: "latest"
 
 service:
   type: NodePort
