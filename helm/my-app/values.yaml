@@ -1,0 +1,19 @@
+replicaCount: 2
+
+image:
+  repository: k8s-app
+  pullPolicy: Never
+  tag: "v2"
+
+service:
+  type: NodePort
+  port: 80
+  targetPort: 8000
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
