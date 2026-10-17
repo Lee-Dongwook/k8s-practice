@@ -5,7 +5,7 @@ metadata:
   labels:
     app: k8s-app
 spec:
-  replicas: 2 # Pod를 2개 생성하여 부하를 분산시키고 가용성을 확보
+  replicas: 4 # Pod를 2개 생성하여 부하를 분산시키고 가용성을 확보 -> 이후 4개로 늘려 트래픽 분산 설정을 확장
   selector:
     matchLabels:
       app: k8s-app
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: k8s-app
-          image: k8s-app:v1
+          image: k8s-app:v2
           imagePullPolicy: Never # 로컬에서 로드한 이미지를 사용
           ports:
             - containerPort: 8000
