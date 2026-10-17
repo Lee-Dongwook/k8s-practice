@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-app-service
+spec:
+  type: NodePort # 외부에서 접근 가능하도록 NodePort 타입 설정
+  selector:
+    app: k8s-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
