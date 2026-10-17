@@ -11,5 +11,5 @@ spec:
     - name: wget
       image: busybox
       command: ['wget']
-      args: ['{{ include "my-app.fullname" . }}:{{ .Values.service.port }}']
+      args: ['{{ .Release.Name }}-service:{{ .Values.service.port }}']
   restartPolicy: Never
